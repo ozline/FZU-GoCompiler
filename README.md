@@ -142,7 +142,7 @@ func contains(items LR1Items, item LR1Item) bool {
 
 ```text
 .
-├── Makefile
+├── Makefile             // 调试脚本
 ├── README.md
 ├── consts
 │   └── consts.go        // 全局常量定义
