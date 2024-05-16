@@ -1,0 +1,12 @@
+package main
+
+import "fmt"
+
+func main() {
+    var number int = 42
+    var str string = "Hello, World!"
+    fmt.Println(number, str)
+
+    // 下面的行包含一个非法字符 '@'
+    var invalid@char = "This is not valid."
+}

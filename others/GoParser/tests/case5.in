@@ -1,0 +1,8 @@
+{
+    int x;
+    int y;
+    int[10] array;
+
+    x = 0;
+    y = 1;
+}

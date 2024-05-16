@@ -1,0 +1,16 @@
+{
+    float[100] series;
+    bool flag;
+    int index;
+
+    index = 0;
+    series[index] = 1.0;
+    flag = true;
+
+    if (flag || series[index] < 100.0) {
+        while (index < 100) {
+            series[index] = series[index - 1] * 1.1;
+            index = index + 1;
+        }
+    }
+}

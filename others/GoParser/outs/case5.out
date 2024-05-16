@@ -1,0 +1,3680 @@
+FIRST(equality) : [ -, !, false, (, id, num, real, true ]
+FIRST(*) : [ * ]
+FIRST(type) : [ basic ]
+FIRST() : [ ε ]
+FIRST(decl) : [ basic ]
+FIRST(loc) : [ id ]
+FIRST(break) : [ break ]
+FIRST(id) : [ id ]
+FIRST($) : [ $ ]
+FIRST(<) : [ < ]
+FIRST(else) : [ else ]
+FIRST(real) : [ real ]
+FIRST(float) : [ float ]
+FIRST(decls) : [ ε, basic ]
+FIRST(join) : [ num, real, true, false, (, id, -, ! ]
+FIRST(]) : [ ] ]
+FIRST(-) : [ - ]
+FIRST(rel) : [ false, (, -, !, id, num, real, true ]
+FIRST(basic) : [ basic ]
+FIRST()) : [ ) ]
+FIRST(!) : [ ! ]
+FIRST(=) : [ = ]
+FIRST(block) : [ { ]
+FIRST(term) : [ false, (, id, !, -, num, real, true ]
+FIRST(unary) : [ num, real, true, false, !, -, (, id ]
+FIRST(+) : [ + ]
+FIRST(>) : [ > ]
+FIRST(factor) : [ (, id, num, real, true, false ]
+FIRST(/) : [ / ]
+FIRST(stmts) : [ do, break, {, if, id, ε, while ]
+FIRST(&&) : [ && ]
+FIRST(==) : [ == ]
+FIRST(!=) : [ != ]
+FIRST(int) : [ int ]
+FIRST(num) : [ num ]
+FIRST(string) : [ string ]
+FIRST(byte) : [ byte ]
+FIRST(type_array) : [ basic ]
+FIRST(stmt) : [ break, {, id, if, while, do ]
+FIRST(>=) : [ >= ]
+FIRST(do) : [ do ]
+FIRST({) : [ { ]
+FIRST(false) : [ false ]
+FIRST(<=) : [ <= ]
+FIRST(loc_array) : [ id ]
+FIRST(if) : [ if ]
+FIRST(while) : [ while ]
+FIRST(true) : [ true ]
+FIRST(bool) : [ bool, !, num, false, -, real, true, (, id ]
+FIRST(program) : [ { ]
+FIRST(;) : [ ; ]
+FIRST(||) : [ || ]
+FIRST(}) : [ } ]
+FIRST([) : [ [ ]
+FIRST(() : [ ( ]
+FIRST(expr) : [ -, !, true, false, (, id, num, real ]
+FOLLOW(loc) : [ =, ==, >=, *, -, <=, [, <, /, !=, +, >, && ]
+FOLLOW(block) : [ {, id, }, else, if, while, do, break ]
+FOLLOW(stmt) : [ if, while, do, break, {, id, }, else ]
+FOLLOW(loc_array) : [ >=, ==, +, <=, >, &&, =, !=, *, -, [, <, / ]
+FOLLOW(equality) : [ &&, ==, != ]
+FOLLOW(expr) : [ ==, <=, >=, -, <, !=, &&, >, + ]
+FOLLOW(factor) : [ +, *, <, /, !=, >=, &&, -, <=, >, == ]
+FOLLOW(decl) : [ do, break, {, basic, if, id, while ]
+FOLLOW(type_array) : [ id, [ ]
+FOLLOW(stmts) : [ while, do, break, {, id, }, if ]
+FOLLOW(join) : [ && ]
+FOLLOW(unary) : [ <=, >, /, -, <, !=, ==, >=, &&, +, * ]
+FOLLOW(program) : [  ]
+FOLLOW(type) : [ id, [ ]
+FOLLOW(bool) : [  ]
+FOLLOW(rel) : [ !=, &&, == ]
+FOLLOW(term) : [ /, &&, <=, +, *, >, -, <, !=, ==, >= ]
+FOLLOW(program') : [ $ ]
+FOLLOW(decls) : [ basic, if, id, while, do, break, { ]
+发现左递归: decls -> [decls decl]
+状态集合 - 共有 101 个状态
+状态 0
+program' -> [program] 位置：0 展望符：$ 长度: 1
+program -> [block] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+状态 1
+program' -> [program] 位置：1 展望符：$ 长度: 1
+状态 2
+program -> [block] 位置：1 展望符：$ 长度: 1
+状态 3
+block -> [{ decls stmts }] 位置：1 展望符：$ 长度: 4
+decls -> [decls decl] 位置：0 展望符：{ 长度: 2
+decls -> [decls decl] 位置：0 展望符：if 长度: 2
+decls -> [decls decl] 位置：0 展望符：id 长度: 2
+decls -> [decls decl] 位置：0 展望符：while 长度: 2
+decls -> [decls decl] 位置：0 展望符：do 长度: 2
+decls -> [decls decl] 位置：0 展望符：} 长度: 2
+decls -> [decls decl] 位置：0 展望符：$ 长度: 2
+decls -> [decls decl] 位置：0 展望符：break 长度: 2
+decls -> [] 位置：0 展望符：break 长度: 1
+decls -> [] 位置：0 展望符：{ 长度: 1
+decls -> [] 位置：0 展望符：if 长度: 1
+decls -> [] 位置：0 展望符：id 长度: 1
+decls -> [] 位置：0 展望符：while 长度: 1
+decls -> [] 位置：0 展望符：do 长度: 1
+decls -> [] 位置：0 展望符：} 长度: 1
+decls -> [] 位置：0 展望符：$ 长度: 1
+decls -> [decls decl] 位置：0 展望符：basic 长度: 2
+decls -> [] 位置：0 展望符：basic 长度: 1
+状态 4
+block -> [{ decls stmts }] 位置：2 展望符：$ 长度: 4
+decls -> [decls decl] 位置：1 展望符：{ 长度: 2
+decls -> [decls decl] 位置：1 展望符：if 长度: 2
+decls -> [decls decl] 位置：1 展望符：id 长度: 2
+decls -> [decls decl] 位置：1 展望符：while 长度: 2
+decls -> [decls decl] 位置：1 展望符：do 长度: 2
+decls -> [decls decl] 位置：1 展望符：} 长度: 2
+decls -> [decls decl] 位置：1 展望符：$ 长度: 2
+decls -> [decls decl] 位置：1 展望符：break 长度: 2
+decls -> [decls decl] 位置：1 展望符：basic 长度: 2
+stmts -> [stmts stmt] 位置：0 展望符：} 长度: 2
+stmts -> [stmts stmt] 位置：0 展望符：$ 长度: 2
+stmts -> [] 位置：0 展望符：} 长度: 1
+stmts -> [] 位置：0 展望符：$ 长度: 1
+decl -> [type id ;] 位置：0 展望符：{ 长度: 3
+decl -> [type id ;] 位置：0 展望符：if 长度: 3
+decl -> [type id ;] 位置：0 展望符：id 长度: 3
+decl -> [type id ;] 位置：0 展望符：while 长度: 3
+decl -> [type id ;] 位置：0 展望符：do 长度: 3
+decl -> [type id ;] 位置：0 展望符：} 长度: 3
+decl -> [type id ;] 位置：0 展望符：$ 长度: 3
+decl -> [type id ;] 位置：0 展望符：break 长度: 3
+decl -> [type id ;] 位置：0 展望符：basic 长度: 3
+stmts -> [stmts stmt] 位置：0 展望符：id 长度: 2
+stmts -> [stmts stmt] 位置：0 展望符：if 长度: 2
+stmts -> [stmts stmt] 位置：0 展望符：while 长度: 2
+stmts -> [stmts stmt] 位置：0 展望符：do 长度: 2
+stmts -> [stmts stmt] 位置：0 展望符：break 长度: 2
+stmts -> [stmts stmt] 位置：0 展望符：{ 长度: 2
+stmts -> [] 位置：0 展望符：do 长度: 1
+stmts -> [] 位置：0 展望符：break 长度: 1
+stmts -> [] 位置：0 展望符：{ 长度: 1
+stmts -> [] 位置：0 展望符：id 长度: 1
+stmts -> [] 位置：0 展望符：if 长度: 1
+stmts -> [] 位置：0 展望符：while 长度: 1
+type -> [type_array] 位置：0 展望符：id 长度: 1
+type -> [type_array] 位置：0 展望符：{ 长度: 1
+type -> [basic] 位置：0 展望符：id 长度: 1
+type -> [basic] 位置：0 展望符：{ 长度: 1
+type -> [type_array] 位置：0 展望符：if 长度: 1
+type -> [basic] 位置：0 展望符：if 长度: 1
+type -> [type_array] 位置：0 展望符：while 长度: 1
+type -> [basic] 位置：0 展望符：while 长度: 1
+type -> [type_array] 位置：0 展望符：do 长度: 1
+type -> [basic] 位置：0 展望符：do 长度: 1
+type -> [type_array] 位置：0 展望符：} 长度: 1
+type -> [basic] 位置：0 展望符：} 长度: 1
+type -> [type_array] 位置：0 展望符：$ 长度: 1
+type -> [basic] 位置：0 展望符：$ 长度: 1
+type -> [type_array] 位置：0 展望符：break 长度: 1
+type -> [basic] 位置：0 展望符：break 长度: 1
+type -> [type_array] 位置：0 展望符：basic 长度: 1
+type -> [basic] 位置：0 展望符：basic 长度: 1
+type_array -> [type [ num ]] 位置：0 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：basic 长度: 4
+type -> [type_array] 位置：0 展望符：[ 长度: 1
+type -> [basic] 位置：0 展望符：[ 长度: 1
+type_array -> [type [ num ]] 位置：0 展望符：[ 长度: 4
+状态 5
+block -> [{ decls stmts }] 位置：3 展望符：$ 长度: 4
+stmts -> [stmts stmt] 位置：1 展望符：} 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：$ 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：id 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：if 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：while 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：do 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：break 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：{ 长度: 2
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 6
+decls -> [decls decl] 位置：2 展望符：{ 长度: 2
+decls -> [decls decl] 位置：2 展望符：if 长度: 2
+decls -> [decls decl] 位置：2 展望符：id 长度: 2
+decls -> [decls decl] 位置：2 展望符：while 长度: 2
+decls -> [decls decl] 位置：2 展望符：do 长度: 2
+decls -> [decls decl] 位置：2 展望符：} 长度: 2
+decls -> [decls decl] 位置：2 展望符：$ 长度: 2
+decls -> [decls decl] 位置：2 展望符：break 长度: 2
+decls -> [decls decl] 位置：2 展望符：basic 长度: 2
+状态 7
+decl -> [type id ;] 位置：1 展望符：{ 长度: 3
+decl -> [type id ;] 位置：1 展望符：if 长度: 3
+decl -> [type id ;] 位置：1 展望符：id 长度: 3
+decl -> [type id ;] 位置：1 展望符：while 长度: 3
+decl -> [type id ;] 位置：1 展望符：do 长度: 3
+decl -> [type id ;] 位置：1 展望符：} 长度: 3
+decl -> [type id ;] 位置：1 展望符：$ 长度: 3
+decl -> [type id ;] 位置：1 展望符：break 长度: 3
+decl -> [type id ;] 位置：1 展望符：basic 长度: 3
+type_array -> [type [ num ]] 位置：1 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：basic 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：[ 长度: 4
+状态 8
+type -> [type_array] 位置：1 展望符：id 长度: 1
+type -> [type_array] 位置：1 展望符：{ 长度: 1
+type -> [type_array] 位置：1 展望符：if 长度: 1
+type -> [type_array] 位置：1 展望符：while 长度: 1
+type -> [type_array] 位置：1 展望符：do 长度: 1
+type -> [type_array] 位置：1 展望符：} 长度: 1
+type -> [type_array] 位置：1 展望符：$ 长度: 1
+type -> [type_array] 位置：1 展望符：break 长度: 1
+type -> [type_array] 位置：1 展望符：basic 长度: 1
+type -> [type_array] 位置：1 展望符：[ 长度: 1
+状态 9
+type -> [basic] 位置：1 展望符：id 长度: 1
+type -> [basic] 位置：1 展望符：{ 长度: 1
+type -> [basic] 位置：1 展望符：if 长度: 1
+type -> [basic] 位置：1 展望符：while 长度: 1
+type -> [basic] 位置：1 展望符：do 长度: 1
+type -> [basic] 位置：1 展望符：} 长度: 1
+type -> [basic] 位置：1 展望符：$ 长度: 1
+type -> [basic] 位置：1 展望符：break 长度: 1
+type -> [basic] 位置：1 展望符：basic 长度: 1
+type -> [basic] 位置：1 展望符：[ 长度: 1
+状态 10
+stmt -> [block] 位置：1 展望符：} 长度: 1
+stmt -> [block] 位置：1 展望符：$ 长度: 1
+stmt -> [block] 位置：1 展望符：id 长度: 1
+stmt -> [block] 位置：1 展望符：if 长度: 1
+stmt -> [block] 位置：1 展望符：while 长度: 1
+stmt -> [block] 位置：1 展望符：do 长度: 1
+stmt -> [block] 位置：1 展望符：break 长度: 1
+stmt -> [block] 位置：1 展望符：{ 长度: 1
+状态 11
+block -> [{ decls stmts }] 位置：1 展望符：} 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：$ 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：id 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：if 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：while 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：do 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：break 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：{ 长度: 4
+decls -> [decls decl] 位置：0 展望符：break 长度: 2
+decls -> [decls decl] 位置：0 展望符：} 长度: 2
+decls -> [decls decl] 位置：0 展望符：{ 长度: 2
+decls -> [decls decl] 位置：0 展望符：if 长度: 2
+decls -> [decls decl] 位置：0 展望符：id 长度: 2
+decls -> [decls decl] 位置：0 展望符：while 长度: 2
+decls -> [decls decl] 位置：0 展望符：do 长度: 2
+decls -> [] 位置：0 展望符：break 长度: 1
+decls -> [] 位置：0 展望符：} 长度: 1
+decls -> [] 位置：0 展望符：{ 长度: 1
+decls -> [] 位置：0 展望符：if 长度: 1
+decls -> [] 位置：0 展望符：id 长度: 1
+decls -> [] 位置：0 展望符：while 长度: 1
+decls -> [] 位置：0 展望符：do 长度: 1
+decls -> [decls decl] 位置：0 展望符：$ 长度: 2
+decls -> [] 位置：0 展望符：$ 长度: 1
+decls -> [decls decl] 位置：0 展望符：basic 长度: 2
+decls -> [] 位置：0 展望符：basic 长度: 1
+状态 12
+block -> [{ decls stmts }] 位置：4 展望符：$ 长度: 4
+状态 13
+loc -> [id] 位置：1 展望符：= 长度: 1
+loc -> [id] 位置：1 展望符：} 长度: 1
+loc -> [id] 位置：1 展望符：$ 长度: 1
+loc -> [id] 位置：1 展望符：id 长度: 1
+loc -> [id] 位置：1 展望符：if 长度: 1
+loc -> [id] 位置：1 展望符：while 长度: 1
+loc -> [id] 位置：1 展望符：do 长度: 1
+loc -> [id] 位置：1 展望符：break 长度: 1
+loc -> [id] 位置：1 展望符：{ 长度: 1
+loc -> [id] 位置：1 展望符：[ 长度: 1
+状态 14
+stmts -> [stmts stmt] 位置：2 展望符：} 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：$ 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：id 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：if 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：while 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：do 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：break 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：{ 长度: 2
+状态 15
+stmt -> [loc = bool ;] 位置：1 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：} 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：$ 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：id 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：if 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：do 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：break 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：[ 长度: 4
+状态 16
+stmt -> [if ( bool ) stmt] 位置：1 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：{ 长度: 7
+状态 17
+stmt -> [while ( bool ) stmt] 位置：1 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：{ 长度: 5
+状态 18
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：{ 长度: 7
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 19
+stmt -> [break ;] 位置：1 展望符：} 长度: 2
+stmt -> [break ;] 位置：1 展望符：$ 长度: 2
+stmt -> [break ;] 位置：1 展望符：id 长度: 2
+stmt -> [break ;] 位置：1 展望符：if 长度: 2
+stmt -> [break ;] 位置：1 展望符：while 长度: 2
+stmt -> [break ;] 位置：1 展望符：do 长度: 2
+stmt -> [break ;] 位置：1 展望符：break 长度: 2
+stmt -> [break ;] 位置：1 展望符：{ 长度: 2
+状态 20
+loc -> [loc_array] 位置：1 展望符：= 长度: 1
+loc -> [loc_array] 位置：1 展望符：} 长度: 1
+loc -> [loc_array] 位置：1 展望符：$ 长度: 1
+loc -> [loc_array] 位置：1 展望符：id 长度: 1
+loc -> [loc_array] 位置：1 展望符：if 长度: 1
+loc -> [loc_array] 位置：1 展望符：while 长度: 1
+loc -> [loc_array] 位置：1 展望符：do 长度: 1
+loc -> [loc_array] 位置：1 展望符：break 长度: 1
+loc -> [loc_array] 位置：1 展望符：{ 长度: 1
+loc -> [loc_array] 位置：1 展望符：[ 长度: 1
+状态 21
+decl -> [type id ;] 位置：2 展望符：{ 长度: 3
+decl -> [type id ;] 位置：2 展望符：if 长度: 3
+decl -> [type id ;] 位置：2 展望符：id 长度: 3
+decl -> [type id ;] 位置：2 展望符：while 长度: 3
+decl -> [type id ;] 位置：2 展望符：do 长度: 3
+decl -> [type id ;] 位置：2 展望符：} 长度: 3
+decl -> [type id ;] 位置：2 展望符：$ 长度: 3
+decl -> [type id ;] 位置：2 展望符：break 长度: 3
+decl -> [type id ;] 位置：2 展望符：basic 长度: 3
+状态 22
+type_array -> [type [ num ]] 位置：2 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：basic 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：[ 长度: 4
+状态 23
+block -> [{ decls stmts }] 位置：2 展望符：} 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：$ 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：id 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：if 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：while 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：do 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：break 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：{ 长度: 4
+decls -> [decls decl] 位置：1 展望符：break 长度: 2
+decls -> [decls decl] 位置：1 展望符：} 长度: 2
+decls -> [decls decl] 位置：1 展望符：{ 长度: 2
+decls -> [decls decl] 位置：1 展望符：if 长度: 2
+decls -> [decls decl] 位置：1 展望符：id 长度: 2
+decls -> [decls decl] 位置：1 展望符：while 长度: 2
+decls -> [decls decl] 位置：1 展望符：do 长度: 2
+decls -> [decls decl] 位置：1 展望符：$ 长度: 2
+decls -> [decls decl] 位置：1 展望符：basic 长度: 2
+stmts -> [stmts stmt] 位置：0 展望符：} 长度: 2
+stmts -> [] 位置：0 展望符：} 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：$ 长度: 2
+stmts -> [] 位置：0 展望符：$ 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：id 长度: 2
+stmts -> [] 位置：0 展望符：id 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：if 长度: 2
+stmts -> [] 位置：0 展望符：if 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：while 长度: 2
+stmts -> [] 位置：0 展望符：while 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：do 长度: 2
+stmts -> [] 位置：0 展望符：do 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：break 长度: 2
+stmts -> [] 位置：0 展望符：break 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：{ 长度: 2
+stmts -> [] 位置：0 展望符：{ 长度: 1
+decl -> [type id ;] 位置：0 展望符：break 长度: 3
+decl -> [type id ;] 位置：0 展望符：} 长度: 3
+decl -> [type id ;] 位置：0 展望符：{ 长度: 3
+decl -> [type id ;] 位置：0 展望符：if 长度: 3
+decl -> [type id ;] 位置：0 展望符：id 长度: 3
+decl -> [type id ;] 位置：0 展望符：while 长度: 3
+decl -> [type id ;] 位置：0 展望符：do 长度: 3
+decl -> [type id ;] 位置：0 展望符：$ 长度: 3
+decl -> [type id ;] 位置：0 展望符：basic 长度: 3
+type -> [type_array] 位置：0 展望符：id 长度: 1
+type -> [type_array] 位置：0 展望符：break 长度: 1
+type -> [basic] 位置：0 展望符：id 长度: 1
+type -> [basic] 位置：0 展望符：break 长度: 1
+type -> [type_array] 位置：0 展望符：} 长度: 1
+type -> [basic] 位置：0 展望符：} 长度: 1
+type -> [type_array] 位置：0 展望符：{ 长度: 1
+type -> [basic] 位置：0 展望符：{ 长度: 1
+type -> [type_array] 位置：0 展望符：if 长度: 1
+type -> [basic] 位置：0 展望符：if 长度: 1
+type -> [type_array] 位置：0 展望符：while 长度: 1
+type -> [basic] 位置：0 展望符：while 长度: 1
+type -> [type_array] 位置：0 展望符：do 长度: 1
+type -> [basic] 位置：0 展望符：do 长度: 1
+type -> [type_array] 位置：0 展望符：$ 长度: 1
+type -> [basic] 位置：0 展望符：$ 长度: 1
+type -> [type_array] 位置：0 展望符：basic 长度: 1
+type -> [basic] 位置：0 展望符：basic 长度: 1
+type_array -> [type [ num ]] 位置：0 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：basic 长度: 4
+type -> [type_array] 位置：0 展望符：[ 长度: 1
+type -> [basic] 位置：0 展望符：[ 长度: 1
+type_array -> [type [ num ]] 位置：0 展望符：[ 长度: 4
+状态 24
+loc_array -> [loc [ num ]] 位置：2 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：[ 长度: 4
+状态 25
+stmt -> [loc = bool ;] 位置：2 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：} 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：$ 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：id 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：if 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：do 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：break 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：{ 长度: 4
+状态 26
+stmt -> [if ( bool ) stmt] 位置：2 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：{ 长度: 7
+状态 27
+stmt -> [while ( bool ) stmt] 位置：2 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：{ 长度: 5
+状态 28
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：{ 长度: 7
+状态 29
+stmt -> [break ;] 位置：2 展望符：} 长度: 2
+stmt -> [break ;] 位置：2 展望符：$ 长度: 2
+stmt -> [break ;] 位置：2 展望符：id 长度: 2
+stmt -> [break ;] 位置：2 展望符：if 长度: 2
+stmt -> [break ;] 位置：2 展望符：while 长度: 2
+stmt -> [break ;] 位置：2 展望符：do 长度: 2
+stmt -> [break ;] 位置：2 展望符：break 长度: 2
+stmt -> [break ;] 位置：2 展望符：{ 长度: 2
+状态 30
+decl -> [type id ;] 位置：3 展望符：{ 长度: 3
+decl -> [type id ;] 位置：3 展望符：if 长度: 3
+decl -> [type id ;] 位置：3 展望符：id 长度: 3
+decl -> [type id ;] 位置：3 展望符：while 长度: 3
+decl -> [type id ;] 位置：3 展望符：do 长度: 3
+decl -> [type id ;] 位置：3 展望符：} 长度: 3
+decl -> [type id ;] 位置：3 展望符：$ 长度: 3
+decl -> [type id ;] 位置：3 展望符：break 长度: 3
+decl -> [type id ;] 位置：3 展望符：basic 长度: 3
+状态 31
+type_array -> [type [ num ]] 位置：3 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：basic 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：[ 长度: 4
+状态 32
+block -> [{ decls stmts }] 位置：3 展望符：} 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：$ 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：id 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：if 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：while 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：do 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：break 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：{ 长度: 4
+stmts -> [stmts stmt] 位置：1 展望符：} 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：$ 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：id 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：if 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：while 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：do 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：break 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：{ 长度: 2
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 33
+loc_array -> [loc [ num ]] 位置：3 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：[ 长度: 4
+状态 34
+stmt -> [loc = num ;] 位置：3 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：{ 长度: 4
+状态 35
+stmt -> [loc = bool ;] 位置：3 展望符：} 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：$ 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：id 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：if 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：do 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：break 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：{ 长度: 4
+状态 36
+stmt -> [if ( bool ) stmt] 位置：3 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：{ 长度: 7
+状态 37
+stmt -> [while ( bool ) stmt] 位置：3 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：{ 长度: 5
+状态 38
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：{ 长度: 7
+状态 39
+type_array -> [type [ num ]] 位置：4 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：basic 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：[ 长度: 4
+状态 40
+block -> [{ decls stmts }] 位置：4 展望符：} 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：$ 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：id 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：if 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：while 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：do 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：break 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：{ 长度: 4
+状态 41
+loc_array -> [loc [ num ]] 位置：4 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：[ 长度: 4
+状态 42
+stmt -> [loc = num ;] 位置：4 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：{ 长度: 4
+状态 43
+stmt -> [loc = bool ;] 位置：4 展望符：} 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：$ 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：id 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：if 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：do 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：break 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：{ 长度: 4
+状态 44
+stmt -> [if ( bool ) stmt] 位置：4 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：{ 长度: 7
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：else 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：else 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：else 长度: 7
+stmt -> [break ;] 位置：0 展望符：else 长度: 2
+stmt -> [block] 位置：0 展望符：else 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：else 长度: 1
+loc -> [id] 位置：0 展望符：else 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：else 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 45
+stmt -> [while ( bool ) stmt] 位置：4 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：{ 长度: 5
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 46
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：{ 长度: 7
+状态 47
+stmt -> [block] 位置：1 展望符：} 长度: 1
+stmt -> [block] 位置：1 展望符：else 长度: 1
+stmt -> [block] 位置：1 展望符：$ 长度: 1
+stmt -> [block] 位置：1 展望符：id 长度: 1
+stmt -> [block] 位置：1 展望符：if 长度: 1
+stmt -> [block] 位置：1 展望符：while 长度: 1
+stmt -> [block] 位置：1 展望符：do 长度: 1
+stmt -> [block] 位置：1 展望符：break 长度: 1
+stmt -> [block] 位置：1 展望符：{ 长度: 1
+状态 48
+block -> [{ decls stmts }] 位置：1 展望符：} 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：else 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：$ 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：id 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：if 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：while 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：do 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：break 长度: 4
+block -> [{ decls stmts }] 位置：1 展望符：{ 长度: 4
+decls -> [decls decl] 位置：0 展望符：break 长度: 2
+decls -> [decls decl] 位置：0 展望符：{ 长度: 2
+decls -> [decls decl] 位置：0 展望符：if 长度: 2
+decls -> [decls decl] 位置：0 展望符：id 长度: 2
+decls -> [decls decl] 位置：0 展望符：} 长度: 2
+decls -> [decls decl] 位置：0 展望符：while 长度: 2
+decls -> [decls decl] 位置：0 展望符：do 长度: 2
+decls -> [] 位置：0 展望符：while 长度: 1
+decls -> [] 位置：0 展望符：do 长度: 1
+decls -> [] 位置：0 展望符：break 长度: 1
+decls -> [] 位置：0 展望符：{ 长度: 1
+decls -> [] 位置：0 展望符：if 长度: 1
+decls -> [] 位置：0 展望符：id 长度: 1
+decls -> [] 位置：0 展望符：} 长度: 1
+decls -> [decls decl] 位置：0 展望符：else 长度: 2
+decls -> [] 位置：0 展望符：else 长度: 1
+decls -> [decls decl] 位置：0 展望符：$ 长度: 2
+decls -> [] 位置：0 展望符：$ 长度: 1
+decls -> [decls decl] 位置：0 展望符：basic 长度: 2
+decls -> [] 位置：0 展望符：basic 长度: 1
+状态 49
+loc -> [id] 位置：1 展望符：= 长度: 1
+loc -> [id] 位置：1 展望符：} 长度: 1
+loc -> [id] 位置：1 展望符：else 长度: 1
+loc -> [id] 位置：1 展望符：$ 长度: 1
+loc -> [id] 位置：1 展望符：id 长度: 1
+loc -> [id] 位置：1 展望符：if 长度: 1
+loc -> [id] 位置：1 展望符：while 长度: 1
+loc -> [id] 位置：1 展望符：do 长度: 1
+loc -> [id] 位置：1 展望符：break 长度: 1
+loc -> [id] 位置：1 展望符：{ 长度: 1
+loc -> [id] 位置：1 展望符：[ 长度: 1
+状态 50
+stmt -> [if ( bool ) stmt] 位置：5 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：{ 长度: 7
+状态 51
+stmt -> [loc = bool ;] 位置：1 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：} 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：else 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：$ 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：id 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：if 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：do 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：break 长度: 4
+stmt -> [loc = bool ;] 位置：1 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：1 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：1 展望符：[ 长度: 4
+状态 52
+stmt -> [if ( bool ) stmt] 位置：1 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：else 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：1 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：1 展望符：{ 长度: 7
+状态 53
+stmt -> [while ( bool ) stmt] 位置：1 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：else 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：1 展望符：{ 长度: 5
+状态 54
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：else 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：1 展望符：{ 长度: 7
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：else 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：else 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：else 长度: 7
+stmt -> [break ;] 位置：0 展望符：else 长度: 2
+stmt -> [block] 位置：0 展望符：else 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：else 长度: 1
+loc -> [id] 位置：0 展望符：else 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：else 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 55
+stmt -> [break ;] 位置：1 展望符：} 长度: 2
+stmt -> [break ;] 位置：1 展望符：else 长度: 2
+stmt -> [break ;] 位置：1 展望符：$ 长度: 2
+stmt -> [break ;] 位置：1 展望符：id 长度: 2
+stmt -> [break ;] 位置：1 展望符：if 长度: 2
+stmt -> [break ;] 位置：1 展望符：while 长度: 2
+stmt -> [break ;] 位置：1 展望符：do 长度: 2
+stmt -> [break ;] 位置：1 展望符：break 长度: 2
+stmt -> [break ;] 位置：1 展望符：{ 长度: 2
+状态 56
+loc -> [loc_array] 位置：1 展望符：= 长度: 1
+loc -> [loc_array] 位置：1 展望符：} 长度: 1
+loc -> [loc_array] 位置：1 展望符：else 长度: 1
+loc -> [loc_array] 位置：1 展望符：$ 长度: 1
+loc -> [loc_array] 位置：1 展望符：id 长度: 1
+loc -> [loc_array] 位置：1 展望符：if 长度: 1
+loc -> [loc_array] 位置：1 展望符：while 长度: 1
+loc -> [loc_array] 位置：1 展望符：do 长度: 1
+loc -> [loc_array] 位置：1 展望符：break 长度: 1
+loc -> [loc_array] 位置：1 展望符：{ 长度: 1
+loc -> [loc_array] 位置：1 展望符：[ 长度: 1
+状态 57
+stmt -> [while ( bool ) stmt] 位置：5 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：{ 长度: 5
+状态 58
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：{ 长度: 7
+状态 59
+block -> [{ decls stmts }] 位置：2 展望符：} 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：else 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：$ 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：id 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：if 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：while 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：do 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：break 长度: 4
+block -> [{ decls stmts }] 位置：2 展望符：{ 长度: 4
+decls -> [decls decl] 位置：1 展望符：break 长度: 2
+decls -> [decls decl] 位置：1 展望符：{ 长度: 2
+decls -> [decls decl] 位置：1 展望符：if 长度: 2
+decls -> [decls decl] 位置：1 展望符：id 长度: 2
+decls -> [decls decl] 位置：1 展望符：} 长度: 2
+decls -> [decls decl] 位置：1 展望符：while 长度: 2
+decls -> [decls decl] 位置：1 展望符：do 长度: 2
+decls -> [decls decl] 位置：1 展望符：else 长度: 2
+decls -> [decls decl] 位置：1 展望符：$ 长度: 2
+decls -> [decls decl] 位置：1 展望符：basic 长度: 2
+stmts -> [stmts stmt] 位置：0 展望符：} 长度: 2
+stmts -> [] 位置：0 展望符：} 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：else 长度: 2
+stmts -> [] 位置：0 展望符：else 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：$ 长度: 2
+stmts -> [] 位置：0 展望符：$ 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：id 长度: 2
+stmts -> [] 位置：0 展望符：id 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：if 长度: 2
+stmts -> [] 位置：0 展望符：if 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：while 长度: 2
+stmts -> [] 位置：0 展望符：while 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：do 长度: 2
+stmts -> [] 位置：0 展望符：do 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：break 长度: 2
+stmts -> [] 位置：0 展望符：break 长度: 1
+stmts -> [stmts stmt] 位置：0 展望符：{ 长度: 2
+stmts -> [] 位置：0 展望符：{ 长度: 1
+decl -> [type id ;] 位置：0 展望符：break 长度: 3
+decl -> [type id ;] 位置：0 展望符：{ 长度: 3
+decl -> [type id ;] 位置：0 展望符：if 长度: 3
+decl -> [type id ;] 位置：0 展望符：id 长度: 3
+decl -> [type id ;] 位置：0 展望符：} 长度: 3
+decl -> [type id ;] 位置：0 展望符：while 长度: 3
+decl -> [type id ;] 位置：0 展望符：do 长度: 3
+decl -> [type id ;] 位置：0 展望符：else 长度: 3
+decl -> [type id ;] 位置：0 展望符：$ 长度: 3
+decl -> [type id ;] 位置：0 展望符：basic 长度: 3
+type -> [type_array] 位置：0 展望符：break 长度: 1
+type -> [type_array] 位置：0 展望符：id 长度: 1
+type -> [basic] 位置：0 展望符：break 长度: 1
+type -> [basic] 位置：0 展望符：id 长度: 1
+type -> [type_array] 位置：0 展望符：{ 长度: 1
+type -> [basic] 位置：0 展望符：{ 长度: 1
+type -> [type_array] 位置：0 展望符：if 长度: 1
+type -> [basic] 位置：0 展望符：if 长度: 1
+type -> [type_array] 位置：0 展望符：} 长度: 1
+type -> [basic] 位置：0 展望符：} 长度: 1
+type -> [type_array] 位置：0 展望符：while 长度: 1
+type -> [basic] 位置：0 展望符：while 长度: 1
+type -> [type_array] 位置：0 展望符：do 长度: 1
+type -> [basic] 位置：0 展望符：do 长度: 1
+type -> [type_array] 位置：0 展望符：else 长度: 1
+type -> [basic] 位置：0 展望符：else 长度: 1
+type -> [type_array] 位置：0 展望符：$ 长度: 1
+type -> [basic] 位置：0 展望符：$ 长度: 1
+type -> [type_array] 位置：0 展望符：basic 长度: 1
+type -> [basic] 位置：0 展望符：basic 长度: 1
+type_array -> [type [ num ]] 位置：0 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：else 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：0 展望符：basic 长度: 4
+type -> [type_array] 位置：0 展望符：[ 长度: 1
+type -> [basic] 位置：0 展望符：[ 长度: 1
+type_array -> [type [ num ]] 位置：0 展望符：[ 长度: 4
+状态 60
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：{ 长度: 7
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 61
+loc_array -> [loc [ num ]] 位置：2 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：2 展望符：[ 长度: 4
+状态 62
+stmt -> [loc = bool ;] 位置：2 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：} 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：else 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：$ 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：id 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：if 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：do 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：break 长度: 4
+stmt -> [loc = bool ;] 位置：2 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：2 展望符：{ 长度: 4
+状态 63
+stmt -> [if ( bool ) stmt] 位置：2 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：else 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：2 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：2 展望符：{ 长度: 7
+状态 64
+stmt -> [while ( bool ) stmt] 位置：2 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：else 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：2 展望符：{ 长度: 5
+状态 65
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：else 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：2 展望符：{ 长度: 7
+状态 66
+stmt -> [break ;] 位置：2 展望符：} 长度: 2
+stmt -> [break ;] 位置：2 展望符：else 长度: 2
+stmt -> [break ;] 位置：2 展望符：$ 长度: 2
+stmt -> [break ;] 位置：2 展望符：id 长度: 2
+stmt -> [break ;] 位置：2 展望符：if 长度: 2
+stmt -> [break ;] 位置：2 展望符：while 长度: 2
+stmt -> [break ;] 位置：2 展望符：do 长度: 2
+stmt -> [break ;] 位置：2 展望符：break 长度: 2
+stmt -> [break ;] 位置：2 展望符：{ 长度: 2
+状态 67
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：{ 长度: 7
+状态 68
+block -> [{ decls stmts }] 位置：3 展望符：} 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：else 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：$ 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：id 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：if 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：while 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：do 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：break 长度: 4
+block -> [{ decls stmts }] 位置：3 展望符：{ 长度: 4
+stmts -> [stmts stmt] 位置：1 展望符：} 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：else 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：$ 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：id 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：if 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：while 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：do 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：break 长度: 2
+stmts -> [stmts stmt] 位置：1 展望符：{ 长度: 2
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：else 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：else 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：else 长度: 7
+stmt -> [break ;] 位置：0 展望符：else 长度: 2
+stmt -> [block] 位置：0 展望符：else 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：else 长度: 1
+loc -> [id] 位置：0 展望符：else 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：else 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 69
+decls -> [decls decl] 位置：2 展望符：break 长度: 2
+decls -> [decls decl] 位置：2 展望符：{ 长度: 2
+decls -> [decls decl] 位置：2 展望符：if 长度: 2
+decls -> [decls decl] 位置：2 展望符：id 长度: 2
+decls -> [decls decl] 位置：2 展望符：} 长度: 2
+decls -> [decls decl] 位置：2 展望符：while 长度: 2
+decls -> [decls decl] 位置：2 展望符：do 长度: 2
+decls -> [decls decl] 位置：2 展望符：else 长度: 2
+decls -> [decls decl] 位置：2 展望符：$ 长度: 2
+decls -> [decls decl] 位置：2 展望符：basic 长度: 2
+状态 70
+decl -> [type id ;] 位置：1 展望符：break 长度: 3
+decl -> [type id ;] 位置：1 展望符：{ 长度: 3
+decl -> [type id ;] 位置：1 展望符：if 长度: 3
+decl -> [type id ;] 位置：1 展望符：id 长度: 3
+decl -> [type id ;] 位置：1 展望符：} 长度: 3
+decl -> [type id ;] 位置：1 展望符：while 长度: 3
+decl -> [type id ;] 位置：1 展望符：do 长度: 3
+decl -> [type id ;] 位置：1 展望符：else 长度: 3
+decl -> [type id ;] 位置：1 展望符：$ 长度: 3
+decl -> [type id ;] 位置：1 展望符：basic 长度: 3
+type_array -> [type [ num ]] 位置：1 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：else 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：basic 长度: 4
+type_array -> [type [ num ]] 位置：1 展望符：[ 长度: 4
+状态 71
+type -> [type_array] 位置：1 展望符：break 长度: 1
+type -> [type_array] 位置：1 展望符：id 长度: 1
+type -> [type_array] 位置：1 展望符：{ 长度: 1
+type -> [type_array] 位置：1 展望符：if 长度: 1
+type -> [type_array] 位置：1 展望符：} 长度: 1
+type -> [type_array] 位置：1 展望符：while 长度: 1
+type -> [type_array] 位置：1 展望符：do 长度: 1
+type -> [type_array] 位置：1 展望符：else 长度: 1
+type -> [type_array] 位置：1 展望符：$ 长度: 1
+type -> [type_array] 位置：1 展望符：basic 长度: 1
+type -> [type_array] 位置：1 展望符：[ 长度: 1
+状态 72
+type -> [basic] 位置：1 展望符：break 长度: 1
+type -> [basic] 位置：1 展望符：id 长度: 1
+type -> [basic] 位置：1 展望符：{ 长度: 1
+type -> [basic] 位置：1 展望符：if 长度: 1
+type -> [basic] 位置：1 展望符：} 长度: 1
+type -> [basic] 位置：1 展望符：while 长度: 1
+type -> [basic] 位置：1 展望符：do 长度: 1
+type -> [basic] 位置：1 展望符：else 长度: 1
+type -> [basic] 位置：1 展望符：$ 长度: 1
+type -> [basic] 位置：1 展望符：basic 长度: 1
+type -> [basic] 位置：1 展望符：[ 长度: 1
+状态 73
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：{ 长度: 7
+状态 74
+loc_array -> [loc [ num ]] 位置：3 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：3 展望符：[ 长度: 4
+状态 75
+stmt -> [loc = num ;] 位置：3 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：3 展望符：{ 长度: 4
+状态 76
+stmt -> [loc = bool ;] 位置：3 展望符：} 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：else 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：$ 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：id 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：if 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：do 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：break 长度: 4
+stmt -> [loc = bool ;] 位置：3 展望符：{ 长度: 4
+状态 77
+stmt -> [if ( bool ) stmt] 位置：3 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：else 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：3 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：3 展望符：{ 长度: 7
+状态 78
+stmt -> [while ( bool ) stmt] 位置：3 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：else 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：3 展望符：{ 长度: 5
+状态 79
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：else 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：3 展望符：{ 长度: 7
+状态 80
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：{ 长度: 7
+状态 81
+block -> [{ decls stmts }] 位置：4 展望符：} 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：else 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：$ 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：id 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：if 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：while 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：do 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：break 长度: 4
+block -> [{ decls stmts }] 位置：4 展望符：{ 长度: 4
+状态 82
+stmts -> [stmts stmt] 位置：2 展望符：} 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：else 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：$ 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：id 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：if 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：while 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：do 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：break 长度: 2
+stmts -> [stmts stmt] 位置：2 展望符：{ 长度: 2
+状态 83
+decl -> [type id ;] 位置：2 展望符：break 长度: 3
+decl -> [type id ;] 位置：2 展望符：{ 长度: 3
+decl -> [type id ;] 位置：2 展望符：if 长度: 3
+decl -> [type id ;] 位置：2 展望符：id 长度: 3
+decl -> [type id ;] 位置：2 展望符：} 长度: 3
+decl -> [type id ;] 位置：2 展望符：while 长度: 3
+decl -> [type id ;] 位置：2 展望符：do 长度: 3
+decl -> [type id ;] 位置：2 展望符：else 长度: 3
+decl -> [type id ;] 位置：2 展望符：$ 长度: 3
+decl -> [type id ;] 位置：2 展望符：basic 长度: 3
+状态 84
+type_array -> [type [ num ]] 位置：2 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：else 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：basic 长度: 4
+type_array -> [type [ num ]] 位置：2 展望符：[ 长度: 4
+状态 85
+loc_array -> [loc [ num ]] 位置：4 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：4 展望符：[ 长度: 4
+状态 86
+stmt -> [loc = num ;] 位置：4 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：4 展望符：{ 长度: 4
+状态 87
+stmt -> [loc = bool ;] 位置：4 展望符：} 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：else 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：$ 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：id 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：if 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：while 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：do 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：break 长度: 4
+stmt -> [loc = bool ;] 位置：4 展望符：{ 长度: 4
+状态 88
+stmt -> [if ( bool ) stmt] 位置：4 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：else 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：4 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：4 展望符：{ 长度: 7
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：else 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：else 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：else 长度: 7
+stmt -> [break ;] 位置：0 展望符：else 长度: 2
+stmt -> [block] 位置：0 展望符：else 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：else 长度: 1
+loc -> [id] 位置：0 展望符：else 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：else 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 89
+stmt -> [while ( bool ) stmt] 位置：4 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：else 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：4 展望符：{ 长度: 5
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：else 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：else 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：else 长度: 7
+stmt -> [break ;] 位置：0 展望符：else 长度: 2
+stmt -> [block] 位置：0 展望符：else 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：else 长度: 1
+loc -> [id] 位置：0 展望符：else 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：else 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 90
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：else 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：4 展望符：{ 长度: 7
+状态 91
+decl -> [type id ;] 位置：3 展望符：break 长度: 3
+decl -> [type id ;] 位置：3 展望符：{ 长度: 3
+decl -> [type id ;] 位置：3 展望符：if 长度: 3
+decl -> [type id ;] 位置：3 展望符：id 长度: 3
+decl -> [type id ;] 位置：3 展望符：} 长度: 3
+decl -> [type id ;] 位置：3 展望符：while 长度: 3
+decl -> [type id ;] 位置：3 展望符：do 长度: 3
+decl -> [type id ;] 位置：3 展望符：else 长度: 3
+decl -> [type id ;] 位置：3 展望符：$ 长度: 3
+decl -> [type id ;] 位置：3 展望符：basic 长度: 3
+状态 92
+type_array -> [type [ num ]] 位置：3 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：else 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：basic 长度: 4
+type_array -> [type [ num ]] 位置：3 展望符：[ 长度: 4
+状态 93
+stmt -> [if ( bool ) stmt] 位置：5 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：else 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt] 位置：5 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：5 展望符：{ 长度: 7
+状态 94
+stmt -> [while ( bool ) stmt] 位置：5 展望符：} 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：else 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：$ 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：id 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：if 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：while 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：do 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：break 长度: 5
+stmt -> [while ( bool ) stmt] 位置：5 展望符：{ 长度: 5
+状态 95
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：else 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：5 展望符：{ 长度: 7
+状态 96
+type_array -> [type [ num ]] 位置：4 展望符：break 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：id 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：{ 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：if 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：} 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：while 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：do 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：else 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：$ 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：basic 长度: 4
+type_array -> [type [ num ]] 位置：4 展望符：[ 长度: 4
+状态 97
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：else 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：6 展望符：{ 长度: 7
+stmt -> [loc = bool ;] 位置：0 展望符：} 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：} 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：} 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：} 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：} 长度: 7
+stmt -> [break ;] 位置：0 展望符：} 长度: 2
+stmt -> [block] 位置：0 展望符：} 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：else 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：else 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：else 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：else 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：else 长度: 7
+stmt -> [break ;] 位置：0 展望符：else 长度: 2
+stmt -> [block] 位置：0 展望符：else 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：$ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：$ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：$ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：$ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：$ 长度: 7
+stmt -> [break ;] 位置：0 展望符：$ 长度: 2
+stmt -> [block] 位置：0 展望符：$ 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：id 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：id 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：id 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：id 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：id 长度: 7
+stmt -> [break ;] 位置：0 展望符：id 长度: 2
+stmt -> [block] 位置：0 展望符：id 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：if 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：if 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：if 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：if 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：if 长度: 7
+stmt -> [break ;] 位置：0 展望符：if 长度: 2
+stmt -> [block] 位置：0 展望符：if 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：while 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：while 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：while 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：while 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：while 长度: 7
+stmt -> [break ;] 位置：0 展望符：while 长度: 2
+stmt -> [block] 位置：0 展望符：while 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：do 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：do 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：do 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：do 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：do 长度: 7
+stmt -> [break ;] 位置：0 展望符：do 长度: 2
+stmt -> [block] 位置：0 展望符：do 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：break 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：break 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：break 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：break 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：break 长度: 7
+stmt -> [break ;] 位置：0 展望符：break 长度: 2
+stmt -> [block] 位置：0 展望符：break 长度: 1
+stmt -> [loc = bool ;] 位置：0 展望符：{ 长度: 4
+stmt -> [loc = num ;] 位置：0 展望符：{ 长度: 4
+stmt -> [if ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [if ( bool ) stmt else stmt] 位置：0 展望符：{ 长度: 7
+stmt -> [while ( bool ) stmt] 位置：0 展望符：{ 长度: 5
+stmt -> [do stmt while ( bool ) ;] 位置：0 展望符：{ 长度: 7
+stmt -> [break ;] 位置：0 展望符：{ 长度: 2
+stmt -> [block] 位置：0 展望符：{ 长度: 1
+loc -> [loc_array] 位置：0 展望符：} 长度: 1
+loc -> [loc_array] 位置：0 展望符：= 长度: 1
+loc -> [id] 位置：0 展望符：} 长度: 1
+loc -> [id] 位置：0 展望符：= 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：} 长度: 4
+loc -> [loc_array] 位置：0 展望符：else 长度: 1
+loc -> [id] 位置：0 展望符：else 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：else 长度: 4
+loc -> [loc_array] 位置：0 展望符：$ 长度: 1
+loc -> [id] 位置：0 展望符：$ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：$ 长度: 4
+loc -> [loc_array] 位置：0 展望符：id 长度: 1
+loc -> [id] 位置：0 展望符：id 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：id 长度: 4
+loc -> [loc_array] 位置：0 展望符：if 长度: 1
+loc -> [id] 位置：0 展望符：if 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：if 长度: 4
+loc -> [loc_array] 位置：0 展望符：while 长度: 1
+loc -> [id] 位置：0 展望符：while 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：while 长度: 4
+loc -> [loc_array] 位置：0 展望符：do 长度: 1
+loc -> [id] 位置：0 展望符：do 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：do 长度: 4
+loc -> [loc_array] 位置：0 展望符：break 长度: 1
+loc -> [id] 位置：0 展望符：break 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：break 长度: 4
+loc -> [loc_array] 位置：0 展望符：{ 长度: 1
+loc -> [id] 位置：0 展望符：{ 长度: 1
+block -> [{ decls stmts }] 位置：0 展望符：{ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：} 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：= 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：else 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：$ 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：id 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：if 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：while 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：do 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：break 长度: 4
+loc_array -> [loc [ num ]] 位置：0 展望符：{ 长度: 4
+loc -> [loc_array] 位置：0 展望符：[ 长度: 1
+loc -> [id] 位置：0 展望符：[ 长度: 1
+loc_array -> [loc [ num ]] 位置：0 展望符：[ 长度: 4
+状态 98
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：else 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：6 展望符：{ 长度: 7
+状态 99
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：} 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：else 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：$ 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：id 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：if 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：while 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：do 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：break 长度: 7
+stmt -> [if ( bool ) stmt else stmt] 位置：7 展望符：{ 长度: 7
+状态 100
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：} 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：else 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：$ 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：id 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：if 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：while 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：do 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：break 长度: 7
+stmt -> [do stmt while ( bool ) ;] 位置：7 展望符：{ 长度: 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+设置 REDUCE 发生冲突! 状态: 93 展望符: 'else'
+GOTO 表
+GOTO[4, stmts] = 5
+GOTO[4, decl] = 6
+GOTO[4, type] = 7
+GOTO[4, type_array] = 8
+GOTO[45, loc_array] = 20
+GOTO[45, stmt] = 57
+GOTO[45, loc] = 15
+GOTO[45, block] = 10
+GOTO[3, decls] = 4
+GOTO[11, decls] = 23
+GOTO[48, decls] = 59
+GOTO[88, loc] = 51
+GOTO[88, block] = 47
+GOTO[88, loc_array] = 56
+GOTO[88, stmt] = 93
+GOTO[97, stmt] = 99
+GOTO[97, loc] = 51
+GOTO[97, block] = 47
+GOTO[97, loc_array] = 56
+GOTO[5, stmt] = 14
+GOTO[5, loc] = 15
+GOTO[5, block] = 10
+GOTO[5, loc_array] = 20
+GOTO[18, stmt] = 28
+GOTO[18, loc] = 15
+GOTO[18, block] = 10
+GOTO[18, loc_array] = 20
+GOTO[44, block] = 47
+GOTO[44, loc_array] = 56
+GOTO[44, stmt] = 50
+GOTO[44, loc] = 51
+GOTO[89, stmt] = 94
+GOTO[89, loc] = 51
+GOTO[89, block] = 47
+GOTO[89, loc_array] = 56
+GOTO[68, stmt] = 82
+GOTO[68, loc] = 51
+GOTO[68, block] = 47
+GOTO[68, loc_array] = 56
+GOTO[0, program] = 1
+GOTO[0, block] = 2
+GOTO[23, stmts] = 32
+GOTO[23, decl] = 6
+GOTO[23, type] = 7
+GOTO[23, type_array] = 8
+GOTO[32, stmt] = 14
+GOTO[32, loc] = 15
+GOTO[32, block] = 10
+GOTO[32, loc_array] = 20
+GOTO[54, stmt] = 65
+GOTO[54, loc] = 51
+GOTO[54, block] = 47
+GOTO[54, loc_array] = 56
+GOTO[59, type] = 70
+GOTO[59, type_array] = 71
+GOTO[59, stmts] = 68
+GOTO[59, decl] = 69
+GOTO[60, stmt] = 73
+GOTO[60, loc] = 15
+GOTO[60, block] = 10
+GOTO[60, loc_array] = 20
+ACTION 表
+ACTION[0, {] = {shift 3}
+ACTION[58, )] = {shift 67}
+ACTION[70, id] = {shift 83}
+ACTION[70, [] = {shift 84}
+ACTION[85, }] = {reduce 19}
+ACTION[85, else] = {reduce 19}
+ACTION[85, if] = {reduce 19}
+ACTION[85, break] = {reduce 19}
+ACTION[85, [] = {reduce 19}
+ACTION[85, =] = {reduce 19}
+ACTION[85, $] = {reduce 19}
+ACTION[85, id] = {reduce 19}
+ACTION[85, while] = {reduce 19}
+ACTION[85, do] = {reduce 19}
+ACTION[85, {] = {reduce 19}
+ACTION[88, while] = {shift 53}
+ACTION[88, do] = {shift 54}
+ACTION[88, break] = {shift 55}
+ACTION[88, id] = {shift 49}
+ACTION[88, {] = {shift 48}
+ACTION[88, if] = {shift 52}
+ACTION[90, bool] = {shift 95}
+ACTION[93, }] = {reduce 12}
+ACTION[93, $] = {reduce 12}
+ACTION[93, do] = {reduce 12}
+ACTION[93, break] = {reduce 12}
+ACTION[93, {] = {reduce 12}
+ACTION[93, else] = {shift 97}
+ACTION[93, id] = {reduce 12}
+ACTION[93, if] = {reduce 12}
+ACTION[93, while] = {reduce 12}
+ACTION[21, ;] = {shift 30}
+ACTION[55, ;] = {shift 66}
+ACTION[62, bool] = {shift 76}
+ACTION[62, num] = {shift 75}
+ACTION[3, break] = {reduce 3}
+ACTION[3, id] = {reduce 3}
+ACTION[3, basic] = {reduce 3}
+ACTION[3, $] = {reduce 3}
+ACTION[3, {] = {reduce 3}
+ACTION[3, if] = {reduce 3}
+ACTION[3, while] = {reduce 3}
+ACTION[3, do] = {reduce 3}
+ACTION[3, }] = {reduce 3}
+ACTION[20, =] = {reduce 18}
+ACTION[20, $] = {reduce 18}
+ACTION[20, if] = {reduce 18}
+ACTION[20, break] = {reduce 18}
+ACTION[20, }] = {reduce 18}
+ACTION[20, id] = {reduce 18}
+ACTION[20, while] = {reduce 18}
+ACTION[20, do] = {reduce 18}
+ACTION[20, {] = {reduce 18}
+ACTION[20, [] = {reduce 18}
+ACTION[42, id] = {reduce 11}
+ACTION[42, if] = {reduce 11}
+ACTION[42, while] = {reduce 11}
+ACTION[42, do] = {reduce 11}
+ACTION[42, break] = {reduce 11}
+ACTION[42, {] = {reduce 11}
+ACTION[42, }] = {reduce 11}
+ACTION[42, $] = {reduce 11}
+ACTION[65, while] = {shift 79}
+ACTION[71, id] = {reduce 5}
+ACTION[71, {] = {reduce 5}
+ACTION[71, }] = {reduce 5}
+ACTION[71, while] = {reduce 5}
+ACTION[71, do] = {reduce 5}
+ACTION[71, [] = {reduce 5}
+ACTION[71, break] = {reduce 5}
+ACTION[71, if] = {reduce 5}
+ACTION[71, else] = {reduce 5}
+ACTION[71, $] = {reduce 5}
+ACTION[71, basic] = {reduce 5}
+ACTION[86, }] = {reduce 11}
+ACTION[86, $] = {reduce 11}
+ACTION[86, if] = {reduce 11}
+ACTION[86, do] = {reduce 11}
+ACTION[86, else] = {reduce 11}
+ACTION[86, id] = {reduce 11}
+ACTION[86, while] = {reduce 11}
+ACTION[86, break] = {reduce 11}
+ACTION[86, {] = {reduce 11}
+ACTION[87, id] = {reduce 10}
+ACTION[87, do] = {reduce 10}
+ACTION[87, break] = {reduce 10}
+ACTION[87, }] = {reduce 10}
+ACTION[87, else] = {reduce 10}
+ACTION[87, $] = {reduce 10}
+ACTION[87, if] = {reduce 10}
+ACTION[87, while] = {reduce 10}
+ACTION[87, {] = {reduce 10}
+ACTION[33, ]] = {shift 41}
+ACTION[40, {] = {reduce 1}
+ACTION[40, }] = {reduce 1}
+ACTION[40, $] = {reduce 1}
+ACTION[40, id] = {reduce 1}
+ACTION[40, if] = {reduce 1}
+ACTION[40, while] = {reduce 1}
+ACTION[40, do] = {reduce 1}
+ACTION[40, break] = {reduce 1}
+ACTION[49, }] = {reduce 20}
+ACTION[49, id] = {reduce 20}
+ACTION[49, while] = {reduce 20}
+ACTION[49, do] = {reduce 20}
+ACTION[49, {] = {reduce 20}
+ACTION[49, [] = {reduce 20}
+ACTION[49, =] = {reduce 20}
+ACTION[49, else] = {reduce 20}
+ACTION[49, $] = {reduce 20}
+ACTION[49, if] = {reduce 20}
+ACTION[49, break] = {reduce 20}
+ACTION[57, do] = {reduce 14}
+ACTION[57, break] = {reduce 14}
+ACTION[57, {] = {reduce 14}
+ACTION[57, }] = {reduce 14}
+ACTION[57, $] = {reduce 14}
+ACTION[57, id] = {reduce 14}
+ACTION[57, if] = {reduce 14}
+ACTION[57, while] = {reduce 14}
+ACTION[60, if] = {shift 16}
+ACTION[60, while] = {shift 17}
+ACTION[60, do] = {shift 18}
+ACTION[60, break] = {shift 19}
+ACTION[60, id] = {shift 13}
+ACTION[60, {] = {shift 11}
+ACTION[98, ;] = {shift 100}
+ACTION[99, {] = {reduce 13}
+ACTION[99, do] = {reduce 13}
+ACTION[99, break] = {reduce 13}
+ACTION[99, $] = {reduce 13}
+ACTION[99, id] = {reduce 13}
+ACTION[99, if] = {reduce 13}
+ACTION[99, while] = {reduce 13}
+ACTION[99, }] = {reduce 13}
+ACTION[99, else] = {reduce 13}
+ACTION[1, $] = {accept 0}
+ACTION[2, $] = {reduce 0}
+ACTION[9, [] = {reduce 7}
+ACTION[9, }] = {reduce 7}
+ACTION[9, $] = {reduce 7}
+ACTION[9, if] = {reduce 7}
+ACTION[9, while] = {reduce 7}
+ACTION[9, do] = {reduce 7}
+ACTION[9, break] = {reduce 7}
+ACTION[9, basic] = {reduce 7}
+ACTION[9, id] = {reduce 7}
+ACTION[9, {] = {reduce 7}
+ACTION[30, }] = {reduce 4}
+ACTION[30, break] = {reduce 4}
+ACTION[30, id] = {reduce 4}
+ACTION[30, if] = {reduce 4}
+ACTION[30, while] = {reduce 4}
+ACTION[30, do] = {reduce 4}
+ACTION[30, $] = {reduce 4}
+ACTION[30, basic] = {reduce 4}
+ACTION[30, {] = {reduce 4}
+ACTION[64, bool] = {shift 78}
+ACTION[80, {] = {reduce 15}
+ACTION[80, }] = {reduce 15}
+ACTION[80, $] = {reduce 15}
+ACTION[80, id] = {reduce 15}
+ACTION[80, if] = {reduce 15}
+ACTION[80, while] = {reduce 15}
+ACTION[80, do] = {reduce 15}
+ACTION[80, break] = {reduce 15}
+ACTION[97, id] = {shift 49}
+ACTION[97, {] = {shift 48}
+ACTION[97, if] = {shift 52}
+ACTION[97, while] = {shift 53}
+ACTION[97, do] = {shift 54}
+ACTION[97, break] = {shift 55}
+ACTION[19, ;] = {shift 29}
+ACTION[46, bool] = {shift 58}
+ACTION[73, {] = {reduce 13}
+ACTION[73, }] = {reduce 13}
+ACTION[73, $] = {reduce 13}
+ACTION[73, id] = {reduce 13}
+ACTION[73, if] = {reduce 13}
+ACTION[73, while] = {reduce 13}
+ACTION[73, do] = {reduce 13}
+ACTION[73, break] = {reduce 13}
+ACTION[78, )] = {shift 89}
+ACTION[82, $] = {reduce 8}
+ACTION[82, if] = {reduce 8}
+ACTION[82, while] = {reduce 8}
+ACTION[82, break] = {reduce 8}
+ACTION[82, {] = {reduce 8}
+ACTION[82, }] = {reduce 8}
+ACTION[82, else] = {reduce 8}
+ACTION[82, id] = {reduce 8}
+ACTION[82, do] = {reduce 8}
+ACTION[94, $] = {reduce 14}
+ACTION[94, while] = {reduce 14}
+ACTION[94, do] = {reduce 14}
+ACTION[94, }] = {reduce 14}
+ACTION[94, else] = {reduce 14}
+ACTION[94, id] = {reduce 14}
+ACTION[94, if] = {reduce 14}
+ACTION[94, break] = {reduce 14}
+ACTION[94, {] = {reduce 14}
+ACTION[16, (] = {shift 26}
+ACTION[17, (] = {shift 27}
+ACTION[25, bool] = {shift 35}
+ACTION[25, num] = {shift 34}
+ACTION[47, else] = {reduce 17}
+ACTION[47, $] = {reduce 17}
+ACTION[47, {] = {reduce 17}
+ACTION[47, }] = {reduce 17}
+ACTION[47, id] = {reduce 17}
+ACTION[47, if] = {reduce 17}
+ACTION[47, while] = {reduce 17}
+ACTION[47, do] = {reduce 17}
+ACTION[47, break] = {reduce 17}
+ACTION[56, =] = {reduce 18}
+ACTION[56, else] = {reduce 18}
+ACTION[56, if] = {reduce 18}
+ACTION[56, break] = {reduce 18}
+ACTION[56, [] = {reduce 18}
+ACTION[56, }] = {reduce 18}
+ACTION[56, $] = {reduce 18}
+ACTION[56, id] = {reduce 18}
+ACTION[56, while] = {reduce 18}
+ACTION[56, do] = {reduce 18}
+ACTION[56, {] = {reduce 18}
+ACTION[12, $] = {reduce 1}
+ACTION[14, break] = {reduce 8}
+ACTION[14, {] = {reduce 8}
+ACTION[14, }] = {reduce 8}
+ACTION[14, $] = {reduce 8}
+ACTION[14, id] = {reduce 8}
+ACTION[14, if] = {reduce 8}
+ACTION[14, while] = {reduce 8}
+ACTION[14, do] = {reduce 8}
+ACTION[24, num] = {shift 33}
+ACTION[72, break] = {reduce 7}
+ACTION[72, id] = {reduce 7}
+ACTION[72, {] = {reduce 7}
+ACTION[72, else] = {reduce 7}
+ACTION[72, $] = {reduce 7}
+ACTION[72, [] = {reduce 7}
+ACTION[72, if] = {reduce 7}
+ACTION[72, }] = {reduce 7}
+ACTION[72, while] = {reduce 7}
+ACTION[72, do] = {reduce 7}
+ACTION[72, basic] = {reduce 7}
+ACTION[75, ;] = {shift 86}
+ACTION[83, ;] = {shift 91}
+ACTION[7, [] = {shift 22}
+ACTION[7, id] = {shift 21}
+ACTION[8, id] = {reduce 5}
+ACTION[8, while] = {reduce 5}
+ACTION[8, break] = {reduce 5}
+ACTION[8, {] = {reduce 5}
+ACTION[8, if] = {reduce 5}
+ACTION[8, do] = {reduce 5}
+ACTION[8, }] = {reduce 5}
+ACTION[8, $] = {reduce 5}
+ACTION[8, basic] = {reduce 5}
+ACTION[8, [] = {reduce 5}
+ACTION[22, num] = {shift 31}
+ACTION[36, )] = {shift 44}
+ACTION[44, id] = {shift 49}
+ACTION[44, {] = {shift 48}
+ACTION[44, if] = {shift 52}
+ACTION[44, while] = {shift 53}
+ACTION[44, do] = {shift 54}
+ACTION[44, break] = {shift 55}
+ACTION[45, if] = {shift 16}
+ACTION[45, while] = {shift 17}
+ACTION[45, do] = {shift 18}
+ACTION[45, break] = {shift 19}
+ACTION[45, id] = {shift 13}
+ACTION[45, {] = {shift 11}
+ACTION[67, ;] = {shift 80}
+ACTION[29, break] = {reduce 16}
+ACTION[29, {] = {reduce 16}
+ACTION[29, }] = {reduce 16}
+ACTION[29, $] = {reduce 16}
+ACTION[29, id] = {reduce 16}
+ACTION[29, if] = {reduce 16}
+ACTION[29, while] = {reduce 16}
+ACTION[29, do] = {reduce 16}
+ACTION[38, (] = {shift 46}
+ACTION[48, break] = {reduce 3}
+ACTION[48, {] = {reduce 3}
+ACTION[48, id] = {reduce 3}
+ACTION[48, else] = {reduce 3}
+ACTION[48, basic] = {reduce 3}
+ACTION[48, while] = {reduce 3}
+ACTION[48, do] = {reduce 3}
+ACTION[48, if] = {reduce 3}
+ACTION[48, }] = {reduce 3}
+ACTION[48, $] = {reduce 3}
+ACTION[50, else] = {shift 60}
+ACTION[50, $] = {reduce 12}
+ACTION[50, id] = {reduce 12}
+ACTION[50, if] = {reduce 12}
+ACTION[50, {] = {reduce 12}
+ACTION[50, }] = {reduce 12}
+ACTION[50, while] = {reduce 12}
+ACTION[50, do] = {reduce 12}
+ACTION[50, break] = {reduce 12}
+ACTION[53, (] = {shift 64}
+ACTION[96, $] = {reduce 6}
+ACTION[96, basic] = {reduce 6}
+ACTION[96, [] = {reduce 6}
+ACTION[96, break] = {reduce 6}
+ACTION[96, id] = {reduce 6}
+ACTION[96, while] = {reduce 6}
+ACTION[96, do] = {reduce 6}
+ACTION[96, else] = {reduce 6}
+ACTION[96, {] = {reduce 6}
+ACTION[96, if] = {reduce 6}
+ACTION[96, }] = {reduce 6}
+ACTION[13, =] = {reduce 20}
+ACTION[13, id] = {reduce 20}
+ACTION[13, break] = {reduce 20}
+ACTION[13, [] = {reduce 20}
+ACTION[13, }] = {reduce 20}
+ACTION[13, $] = {reduce 20}
+ACTION[13, if] = {reduce 20}
+ACTION[13, while] = {reduce 20}
+ACTION[13, do] = {reduce 20}
+ACTION[13, {] = {reduce 20}
+ACTION[54, break] = {shift 55}
+ACTION[54, id] = {shift 49}
+ACTION[54, {] = {shift 48}
+ACTION[54, if] = {shift 52}
+ACTION[54, while] = {shift 53}
+ACTION[54, do] = {shift 54}
+ACTION[69, else] = {reduce 2}
+ACTION[69, basic] = {reduce 2}
+ACTION[69, break] = {reduce 2}
+ACTION[69, }] = {reduce 2}
+ACTION[69, id] = {reduce 2}
+ACTION[69, while] = {reduce 2}
+ACTION[69, do] = {reduce 2}
+ACTION[69, $] = {reduce 2}
+ACTION[69, {] = {reduce 2}
+ACTION[69, if] = {reduce 2}
+ACTION[84, num] = {shift 92}
+ACTION[89, if] = {shift 52}
+ACTION[89, while] = {shift 53}
+ACTION[89, do] = {shift 54}
+ACTION[89, break] = {shift 55}
+ACTION[89, id] = {shift 49}
+ACTION[89, {] = {shift 48}
+ACTION[32, {] = {shift 11}
+ACTION[32, }] = {shift 40}
+ACTION[32, if] = {shift 16}
+ACTION[32, while] = {shift 17}
+ACTION[32, do] = {shift 18}
+ACTION[32, break] = {shift 19}
+ACTION[32, id] = {shift 13}
+ACTION[41, {] = {reduce 19}
+ACTION[41, =] = {reduce 19}
+ACTION[41, if] = {reduce 19}
+ACTION[41, id] = {reduce 19}
+ACTION[41, while] = {reduce 19}
+ACTION[41, do] = {reduce 19}
+ACTION[41, break] = {reduce 19}
+ACTION[41, [] = {reduce 19}
+ACTION[41, }] = {reduce 19}
+ACTION[41, $] = {reduce 19}
+ACTION[43, break] = {reduce 10}
+ACTION[43, {] = {reduce 10}
+ACTION[43, }] = {reduce 10}
+ACTION[43, $] = {reduce 10}
+ACTION[43, id] = {reduce 10}
+ACTION[43, if] = {reduce 10}
+ACTION[43, while] = {reduce 10}
+ACTION[43, do] = {reduce 10}
+ACTION[61, num] = {shift 74}
+ACTION[66, do] = {reduce 16}
+ACTION[66, break] = {reduce 16}
+ACTION[66, }] = {reduce 16}
+ACTION[66, else] = {reduce 16}
+ACTION[66, while] = {reduce 16}
+ACTION[66, {] = {reduce 16}
+ACTION[66, $] = {reduce 16}
+ACTION[66, id] = {reduce 16}
+ACTION[66, if] = {reduce 16}
+ACTION[81, }] = {reduce 1}
+ACTION[81, else] = {reduce 1}
+ACTION[81, do] = {reduce 1}
+ACTION[81, break] = {reduce 1}
+ACTION[81, {] = {reduce 1}
+ACTION[81, $] = {reduce 1}
+ACTION[81, id] = {reduce 1}
+ACTION[81, if] = {reduce 1}
+ACTION[81, while] = {reduce 1}
+ACTION[4, if] = {reduce 9}
+ACTION[4, basic] = {shift 9}
+ACTION[4, $] = {reduce 9}
+ACTION[4, break] = {reduce 9}
+ACTION[4, {] = {reduce 9}
+ACTION[4, id] = {reduce 9}
+ACTION[4, while] = {reduce 9}
+ACTION[4, }] = {reduce 9}
+ACTION[4, do] = {reduce 9}
+ACTION[6, if] = {reduce 2}
+ACTION[6, id] = {reduce 2}
+ACTION[6, do] = {reduce 2}
+ACTION[6, }] = {reduce 2}
+ACTION[6, {] = {reduce 2}
+ACTION[6, while] = {reduce 2}
+ACTION[6, $] = {reduce 2}
+ACTION[6, break] = {reduce 2}
+ACTION[6, basic] = {reduce 2}
+ACTION[34, ;] = {shift 42}
+ACTION[52, (] = {shift 63}
+ACTION[91, break] = {reduce 4}
+ACTION[91, if] = {reduce 4}
+ACTION[91, id] = {reduce 4}
+ACTION[91, while] = {reduce 4}
+ACTION[91, else] = {reduce 4}
+ACTION[91, basic] = {reduce 4}
+ACTION[91, {] = {reduce 4}
+ACTION[91, }] = {reduce 4}
+ACTION[91, do] = {reduce 4}
+ACTION[91, $] = {reduce 4}
+ACTION[100, else] = {reduce 15}
+ACTION[100, if] = {reduce 15}
+ACTION[100, }] = {reduce 15}
+ACTION[100, $] = {reduce 15}
+ACTION[100, id] = {reduce 15}
+ACTION[100, while] = {reduce 15}
+ACTION[100, do] = {reduce 15}
+ACTION[100, break] = {reduce 15}
+ACTION[100, {] = {reduce 15}
+ACTION[5, }] = {shift 12}
+ACTION[5, if] = {shift 16}
+ACTION[5, while] = {shift 17}
+ACTION[5, do] = {shift 18}
+ACTION[5, break] = {shift 19}
+ACTION[5, id] = {shift 13}
+ACTION[5, {] = {shift 11}
+ACTION[11, break] = {reduce 3}
+ACTION[11, }] = {reduce 3}
+ACTION[11, {] = {reduce 3}
+ACTION[11, while] = {reduce 3}
+ACTION[11, do] = {reduce 3}
+ACTION[11, basic] = {reduce 3}
+ACTION[11, if] = {reduce 3}
+ACTION[11, id] = {reduce 3}
+ACTION[11, $] = {reduce 3}
+ACTION[26, bool] = {shift 36}
+ACTION[35, ;] = {shift 43}
+ACTION[63, bool] = {shift 77}
+ACTION[74, ]] = {shift 85}
+ACTION[76, ;] = {shift 87}
+ACTION[95, )] = {shift 98}
+ACTION[18, id] = {shift 13}
+ACTION[18, {] = {shift 11}
+ACTION[18, if] = {shift 16}
+ACTION[18, while] = {shift 17}
+ACTION[18, do] = {shift 18}
+ACTION[18, break] = {shift 19}
+ACTION[27, bool] = {shift 37}
+ACTION[28, while] = {shift 38}
+ACTION[31, ]] = {shift 39}
+ACTION[37, )] = {shift 45}
+ACTION[39, id] = {reduce 6}
+ACTION[39, {] = {reduce 6}
+ACTION[39, if] = {reduce 6}
+ACTION[39, do] = {reduce 6}
+ACTION[39, }] = {reduce 6}
+ACTION[39, $] = {reduce 6}
+ACTION[39, break] = {reduce 6}
+ACTION[39, while] = {reduce 6}
+ACTION[39, basic] = {reduce 6}
+ACTION[39, [] = {reduce 6}
+ACTION[92, ]] = {shift 96}
+ACTION[79, (] = {shift 90}
+ACTION[10, if] = {reduce 17}
+ACTION[10, while] = {reduce 17}
+ACTION[10, do] = {reduce 17}
+ACTION[10, break] = {reduce 17}
+ACTION[10, {] = {reduce 17}
+ACTION[10, }] = {reduce 17}
+ACTION[10, $] = {reduce 17}
+ACTION[10, id] = {reduce 17}
+ACTION[15, [] = {shift 24}
+ACTION[15, =] = {shift 25}
+ACTION[23, }] = {reduce 9}
+ACTION[23, id] = {reduce 9}
+ACTION[23, if] = {reduce 9}
+ACTION[23, {] = {reduce 9}
+ACTION[23, basic] = {shift 9}
+ACTION[23, $] = {reduce 9}
+ACTION[23, while] = {reduce 9}
+ACTION[23, do] = {reduce 9}
+ACTION[23, break] = {reduce 9}
+ACTION[51, =] = {shift 62}
+ACTION[51, [] = {shift 61}
+ACTION[59, while] = {reduce 9}
+ACTION[59, basic] = {shift 72}
+ACTION[59, else] = {reduce 9}
+ACTION[59, id] = {reduce 9}
+ACTION[59, if] = {reduce 9}
+ACTION[59, break] = {reduce 9}
+ACTION[59, {] = {reduce 9}
+ACTION[59, }] = {reduce 9}
+ACTION[59, $] = {reduce 9}
+ACTION[59, do] = {reduce 9}
+ACTION[68, {] = {shift 48}
+ACTION[68, }] = {shift 81}
+ACTION[68, if] = {shift 52}
+ACTION[68, while] = {shift 53}
+ACTION[68, do] = {shift 54}
+ACTION[68, break] = {shift 55}
+ACTION[68, id] = {shift 49}
+ACTION[77, )] = {shift 88}
+
+
+=====================================
+第 1 步
+状态栈: [0]
+符号栈: [$]
+当前状态: 0, 当前符号: { 转换后: {
+动作类别: shift 期望下一步状态: 3
+执行移入操作
+
+
+=====================================
+第 2 步
+状态栈: [0 3]
+符号栈: [$ {]
+当前状态: 3, 当前符号: int 转换后: basic
+动作类别: reduce 期望下一步状态: 3
+使用产生式 decls -> [] 规约
+转移状态到 4
+
+
+=====================================
+第 3 步
+状态栈: [0 3 4]
+符号栈: [$ { decls]
+当前状态: 4, 当前符号: int 转换后: basic
+动作类别: shift 期望下一步状态: 9
+执行移入操作
+
+
+=====================================
+第 4 步
+状态栈: [0 3 4 9]
+符号栈: [$ { decls basic]
+当前状态: 9, 当前符号: x 转换后: id
+动作类别: reduce 期望下一步状态: 7
+使用产生式 type -> [basic] 规约
+转移状态到 7
+
+
+=====================================
+第 5 步
+状态栈: [0 3 4 7]
+符号栈: [$ { decls type]
+当前状态: 7, 当前符号: x 转换后: id
+动作类别: shift 期望下一步状态: 21
+执行移入操作
+
+
+=====================================
+第 6 步
+状态栈: [0 3 4 7 21]
+符号栈: [$ { decls type id]
+当前状态: 21, 当前符号: ; 转换后: ;
+动作类别: shift 期望下一步状态: 30
+执行移入操作
+
+
+=====================================
+第 7 步
+状态栈: [0 3 4 7 21 30]
+符号栈: [$ { decls type id ;]
+当前状态: 30, 当前符号: int 转换后: basic
+动作类别: reduce 期望下一步状态: 4
+使用产生式 decl -> [type id ;] 规约
+转移状态到 6
+
+
+=====================================
+第 8 步
+状态栈: [0 3 4 6]
+符号栈: [$ { decls decl]
+当前状态: 6, 当前符号: int 转换后: basic
+动作类别: reduce 期望下一步状态: 2
+使用产生式 decls -> [decls decl] 规约
+转移状态到 4
+
+
+=====================================
+第 9 步
+状态栈: [0 3 4]
+符号栈: [$ { decls]
+当前状态: 4, 当前符号: int 转换后: basic
+动作类别: shift 期望下一步状态: 9
+执行移入操作
+
+
+=====================================
+第 10 步
+状态栈: [0 3 4 9]
+符号栈: [$ { decls basic]
+当前状态: 9, 当前符号: y 转换后: id
+动作类别: reduce 期望下一步状态: 7
+使用产生式 type -> [basic] 规约
+转移状态到 7
+
+
+=====================================
+第 11 步
+状态栈: [0 3 4 7]
+符号栈: [$ { decls type]
+当前状态: 7, 当前符号: y 转换后: id
+动作类别: shift 期望下一步状态: 21
+执行移入操作
+
+
+=====================================
+第 12 步
+状态栈: [0 3 4 7 21]
+符号栈: [$ { decls type id]
+当前状态: 21, 当前符号: ; 转换后: ;
+动作类别: shift 期望下一步状态: 30
+执行移入操作
+
+
+=====================================
+第 13 步
+状态栈: [0 3 4 7 21 30]
+符号栈: [$ { decls type id ;]
+当前状态: 30, 当前符号: int 转换后: basic
+动作类别: reduce 期望下一步状态: 4
+使用产生式 decl -> [type id ;] 规约
+转移状态到 6
+
+
+=====================================
+第 14 步
+状态栈: [0 3 4 6]
+符号栈: [$ { decls decl]
+当前状态: 6, 当前符号: int 转换后: basic
+动作类别: reduce 期望下一步状态: 2
+使用产生式 decls -> [decls decl] 规约
+转移状态到 4
+
+
+=====================================
+第 15 步
+状态栈: [0 3 4]
+符号栈: [$ { decls]
+当前状态: 4, 当前符号: int 转换后: basic
+动作类别: shift 期望下一步状态: 9
+执行移入操作
+
+
+=====================================
+第 16 步
+状态栈: [0 3 4 9]
+符号栈: [$ { decls basic]
+当前状态: 9, 当前符号: [ 转换后: [
+动作类别: reduce 期望下一步状态: 7
+使用产生式 type -> [basic] 规约
+转移状态到 7
+
+
+=====================================
+第 17 步
+状态栈: [0 3 4 7]
+符号栈: [$ { decls type]
+当前状态: 7, 当前符号: [ 转换后: [
+动作类别: shift 期望下一步状态: 22
+执行移入操作
+
+
+=====================================
+第 18 步
+状态栈: [0 3 4 7 22]
+符号栈: [$ { decls type []
+当前状态: 22, 当前符号: 10 转换后: num
+动作类别: shift 期望下一步状态: 31
+执行移入操作
+
+
+=====================================
+第 19 步
+状态栈: [0 3 4 7 22 31]
+符号栈: [$ { decls type [ num]
+当前状态: 31, 当前符号: ] 转换后: ]
+动作类别: shift 期望下一步状态: 39
+执行移入操作
+
+
+=====================================
+第 20 步
+状态栈: [0 3 4 7 22 31 39]
+符号栈: [$ { decls type [ num ]]
+当前状态: 39, 当前符号: array 转换后: id
+动作类别: reduce 期望下一步状态: 6
+使用产生式 type_array -> [type [ num ]] 规约
+转移状态到 8
+
+
+=====================================
+第 21 步
+状态栈: [0 3 4 8]
+符号栈: [$ { decls type_array]
+当前状态: 8, 当前符号: array 转换后: id
+动作类别: reduce 期望下一步状态: 5
+使用产生式 type -> [type_array] 规约
+转移状态到 7
+
+
+=====================================
+第 22 步
+状态栈: [0 3 4 7]
+符号栈: [$ { decls type]
+当前状态: 7, 当前符号: array 转换后: id
+动作类别: shift 期望下一步状态: 21
+执行移入操作
+
+
+=====================================
+第 23 步
+状态栈: [0 3 4 7 21]
+符号栈: [$ { decls type id]
+当前状态: 21, 当前符号: ; 转换后: ;
+动作类别: shift 期望下一步状态: 30
+执行移入操作
+
+
+=====================================
+第 24 步
+状态栈: [0 3 4 7 21 30]
+符号栈: [$ { decls type id ;]
+当前状态: 30, 当前符号: x 转换后: id
+动作类别: reduce 期望下一步状态: 4
+使用产生式 decl -> [type id ;] 规约
+转移状态到 6
+
+
+=====================================
+第 25 步
+状态栈: [0 3 4 6]
+符号栈: [$ { decls decl]
+当前状态: 6, 当前符号: x 转换后: id
+动作类别: reduce 期望下一步状态: 2
+使用产生式 decls -> [decls decl] 规约
+转移状态到 4
+
+
+=====================================
+第 26 步
+状态栈: [0 3 4]
+符号栈: [$ { decls]
+当前状态: 4, 当前符号: x 转换后: id
+动作类别: reduce 期望下一步状态: 9
+使用产生式 stmts -> [] 规约
+转移状态到 5
+
+
+=====================================
+第 27 步
+状态栈: [0 3 4 5]
+符号栈: [$ { decls stmts]
+当前状态: 5, 当前符号: x 转换后: id
+动作类别: shift 期望下一步状态: 13
+执行移入操作
+
+
+=====================================
+第 28 步
+状态栈: [0 3 4 5 13]
+符号栈: [$ { decls stmts id]
+当前状态: 13, 当前符号: = 转换后: =
+动作类别: reduce 期望下一步状态: 20
+使用产生式 loc -> [id] 规约
+转移状态到 15
+
+
+=====================================
+第 29 步
+状态栈: [0 3 4 5 15]
+符号栈: [$ { decls stmts loc]
+当前状态: 15, 当前符号: = 转换后: =
+动作类别: shift 期望下一步状态: 25
+执行移入操作
+
+
+=====================================
+第 30 步
+状态栈: [0 3 4 5 15 25]
+符号栈: [$ { decls stmts loc =]
+当前状态: 25, 当前符号: 0 转换后: num
+动作类别: shift 期望下一步状态: 34
+执行移入操作
+
+
+=====================================
+第 31 步
+状态栈: [0 3 4 5 15 25 34]
+符号栈: [$ { decls stmts loc = num]
+当前状态: 34, 当前符号: ; 转换后: ;
+动作类别: shift 期望下一步状态: 42
+执行移入操作
+
+
+=====================================
+第 32 步
+状态栈: [0 3 4 5 15 25 34 42]
+符号栈: [$ { decls stmts loc = num ;]
+当前状态: 42, 当前符号: y 转换后: id
+动作类别: reduce 期望下一步状态: 11
+使用产生式 stmt -> [loc = num ;] 规约
+转移状态到 14
+
+
+=====================================
+第 33 步
+状态栈: [0 3 4 5 14]
+符号栈: [$ { decls stmts stmt]
+当前状态: 14, 当前符号: y 转换后: id
+动作类别: reduce 期望下一步状态: 8
+使用产生式 stmts -> [stmts stmt] 规约
+转移状态到 5
+
+
+=====================================
+第 34 步
+状态栈: [0 3 4 5]
+符号栈: [$ { decls stmts]
+当前状态: 5, 当前符号: y 转换后: id
+动作类别: shift 期望下一步状态: 13
+执行移入操作
+
+
+=====================================
+第 35 步
+状态栈: [0 3 4 5 13]
+符号栈: [$ { decls stmts id]
+当前状态: 13, 当前符号: = 转换后: =
+动作类别: reduce 期望下一步状态: 20
+使用产生式 loc -> [id] 规约
+转移状态到 15
+
+
+=====================================
+第 36 步
+状态栈: [0 3 4 5 15]
+符号栈: [$ { decls stmts loc]
+当前状态: 15, 当前符号: = 转换后: =
+动作类别: shift 期望下一步状态: 25
+执行移入操作
+
+
+=====================================
+第 37 步
+状态栈: [0 3 4 5 15 25]
+符号栈: [$ { decls stmts loc =]
+当前状态: 25, 当前符号: 1 转换后: num
+动作类别: shift 期望下一步状态: 34
+执行移入操作
+
+
+=====================================
+第 38 步
+状态栈: [0 3 4 5 15 25 34]
+符号栈: [$ { decls stmts loc = num]
+当前状态: 34, 当前符号: ; 转换后: ;
+动作类别: shift 期望下一步状态: 42
+执行移入操作
+
+
+=====================================
+第 39 步
+状态栈: [0 3 4 5 15 25 34 42]
+符号栈: [$ { decls stmts loc = num ;]
+当前状态: 42, 当前符号: } 转换后: }
+动作类别: reduce 期望下一步状态: 11
+使用产生式 stmt -> [loc = num ;] 规约
+转移状态到 14
+
+
+=====================================
+第 40 步
+状态栈: [0 3 4 5 14]
+符号栈: [$ { decls stmts stmt]
+当前状态: 14, 当前符号: } 转换后: }
+动作类别: reduce 期望下一步状态: 8
+使用产生式 stmts -> [stmts stmt] 规约
+转移状态到 5
+
+
+=====================================
+第 41 步
+状态栈: [0 3 4 5]
+符号栈: [$ { decls stmts]
+当前状态: 5, 当前符号: } 转换后: }
+动作类别: shift 期望下一步状态: 12
+执行移入操作
+
+
+=====================================
+第 42 步
+状态栈: [0 3 4 5 12]
+符号栈: [$ { decls stmts }]
+当前状态: 12, 当前符号:  转换后: $
+动作类别: reduce 期望下一步状态: 1
+使用产生式 block -> [{ decls stmts }] 规约
+转移状态到 2
+
+
+=====================================
+第 43 步
+状态栈: [0 2]
+符号栈: [$ block]
+当前状态: 2, 当前符号:  转换后: $
+动作类别: reduce 期望下一步状态: 0
+使用产生式 program -> [block] 规约
+转移状态到 1
+
+
+=====================================
+第 44 步
+状态栈: [0 1]
+符号栈: [$ program]
+当前状态: 1, 当前符号:  转换后: $
+动作类别: accept 期望下一步状态: 0
+成功完成解析.

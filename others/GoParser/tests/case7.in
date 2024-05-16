@@ -1,0 +1,24 @@
+{
+    int i;
+    int max;
+    bool cond;
+
+    max = 10;
+    i = 0;
+    cond = false;
+
+    do {
+        i = i + 1;
+        if (i == max) {
+            cond = true;
+        } else {
+            cond = false;
+        }
+    } while (!cond);
+
+    if (cond) {
+        i = i - 1;
+    } else {
+        i = i + 1;
+    }
+}

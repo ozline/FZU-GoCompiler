@@ -1,0 +1,77 @@
+Type: 保留字        Value: package
+Type: 标识符        Value: main
+Type: 保留字        Value: import
+Type: 分隔符        Value: (
+Type: 字符串        Value: fmt
+Type: 字符串        Value: os
+Type: 分隔符        Value: )
+Type: 保留字        Value: func
+Type: 标识符        Value: main
+Type: 分隔符        Value: (
+Type: 分隔符        Value: )
+Type: 分隔符        Value: {
+Type: 标识符        Value: lexer
+Type: 分隔符        Value: :
+Type: 运算符        Value: =
+Type: 标识符        Value: NewLexer
+Type: 分隔符        Value: (
+Type: 标识符        Value: os
+Type: 分隔符        Value: .
+Type: 标识符        Value: Stdin
+Type: 分隔符        Value: )
+Type: 保留字        Value: for
+Type: 分隔符        Value: {
+Type: 标识符        Value: token
+Type: 分隔符        Value: :
+Type: 运算符        Value: =
+Type: 标识符        Value: lexer
+Type: 分隔符        Value: .
+Type: 标识符        Value: NextToken
+Type: 分隔符        Value: (
+Type: 分隔符        Value: )
+Type: 保留字        Value: if
+Type: 标识符        Value: token
+Type: 分隔符        Value: .
+Type: 标识符        Value: Type
+Type: 运算符        Value: =
+Type: 运算符        Value: =
+Type: 标识符        Value: EOF
+Type: 分隔符        Value: {
+Type: 保留字        Value: break
+Type: 分隔符        Value: }
+Type: 标识符        Value: fmt
+Type: 分隔符        Value: .
+Type: 标识符        Value: Printf
+Type: 分隔符        Value: (
+Type: 字符串        Value: Value: %-10v Type: %v\n
+Type: 分隔符        Value: ,
+Type: 标识符        Value: token
+Type: 分隔符        Value: .
+Type: 标识符        Value: Value
+Type: 分隔符        Value: ,
+Type: 标识符        Value: tokenTypes
+Type: 分隔符        Value: [
+Type: 标识符        Value: token
+Type: 分隔符        Value: .
+Type: 标识符        Value: Type
+Type: 分隔符        Value: ]
+Type: 分隔符        Value: )
+Type: 分隔符        Value: }
+Type: 分隔符        Value: }
+
+
+
+符号表:
+标识符: Value      类型: 标识符        位置: (17, 47)
+标识符: token      类型: 标识符        位置: (13, 3) (14, 6) (17, 41) (17, 65)
+标识符: Printf     类型: 标识符        位置: (17, 7)
+标识符: tokenTypes 类型: 标识符        位置: (17, 54)
+标识符: lexer      类型: 标识符        位置: (10, 2) (13, 12)
+标识符: os         类型: 标识符        位置: (10, 20)
+标识符: fmt        类型: 标识符        位置: (17, 3)
+标识符: Type       类型: 标识符        位置: (14, 12) (17, 71)
+标识符: EOF        类型: 标识符        位置: (14, 20)
+标识符: Stdin      类型: 标识符        位置: (10, 23)
+标识符: NextToken  类型: 标识符        位置: (13, 18)
+标识符: main       类型: 标识符        位置: (1, 9) (8, 6)
+标识符: NewLexer   类型: 标识符        位置: (10, 11)

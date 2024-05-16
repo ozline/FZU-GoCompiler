@@ -1,0 +1,19 @@
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	// 创建一个新的 lexer 实例
+	lexer := NewLexer(os.Stdin)
+
+	for {
+		token := lexer.NextToken()
+		if token.Type == EOF {
+			break
+		}
+		fmt.Printf("Value: %-10v Type: %v\n", token.Value, tokenTypes[token.Type]) // 输出 Token 信息
+	}
+}
