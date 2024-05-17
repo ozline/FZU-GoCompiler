@@ -259,7 +259,7 @@ func (p *Parser) computeFirstSetOfSequence(sequence []consts.Symbol) map[consts.
 				firstSetSeq[terminal] = true
 			}
 		}
-		if !firstSetSym[EPSILON] {
+		if !p.containsEpsilon(firstSetSym) {
 			break
 		}
 	}

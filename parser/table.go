@@ -72,7 +72,6 @@ func (p *Parser) buildActionTable() {
 			// 这个 Position 指的是下一个要处理的符号的位置，所以如果等于产生式体的长度，说明没有未处理的符号。
 
 			// 当没有未处理的符号时，执行规约动作或接受动作。
-			// 特殊处理，即 item 只有一个 EPSILON
 			if item.Position == len(item.Production.Body) || (item.Position == len(item.Production.Body)-1 && item.Production.Body[item.Position] == EPSILON) {
 				if item.Production.Head == ARGUMENTED_PRODUCTION.Head && item.Lookahead == TERMINATE_SYMBOL {
 					// 接受动作

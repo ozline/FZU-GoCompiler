@@ -261,7 +261,7 @@ func (p *Parser) computeLookahead(symbols []consts.Symbol, lookahead consts.Term
 		return map[consts.Terminal]bool{lookahead: true}
 	}
 
-	// allNullable := true
+	allNullable := true
 	firstSet := make(map[consts.Terminal]bool)
 	for _, sym := range symbols {
 		if p.Grammar.IsTerminal(sym) {
@@ -270,10 +270,11 @@ func (p *Parser) computeLookahead(symbols []consts.Symbol, lookahead consts.Term
 		}
 
 		// 将 sym 的 FIRST 集合中的每一个终结符添加到 firstSet 中，但是忽略空（EPSILON）。
+		// 我们只关心可以立即开始的符号，而不是可以是空的符号
 		for terminal := range p.FirstSet[sym] {
-			// if terminal != EPSILON { // 忽略EPSILON
-			firstSet[terminal] = true
-			// }
+			if terminal != EPSILON { // 忽略EPSILON
+				firstSet[terminal] = true
+			}
 		}
 
 		// 如果当前符号的First集合不包含EPSILON，那么它不是可空的，停止
@@ -282,15 +283,16 @@ func (p *Parser) computeLookahead(symbols []consts.Symbol, lookahead consts.Term
 			在计算 FIRST 集合时，我们只关心可以立即开始的符号。在产生式右侧的符号序列中，如果一个符号的 FIRST 集合包含 EPSILON，那么就意味着这个符号可以为空，我们需要继续查看下一个符号。如果一个符号的 FIRST 集合不包含 EPSILON，那么这个符号就不能为空，我们就可以停止查看后续的符号。
 		*/
 		if !firstSet[EPSILON] {
-			// allNullable = false
+			allNullable = false
 			break
 		}
 	}
 
 	// 如果所有符号都是可空的，或者没有符号，添加原始的展望符
 	// 例如，假设有 A -> B C D，其中 B、C、D 都可以推导出空串，那么在识别 A 时，我们可能会立即看到 B、C 和 D 后面的符号，也就是原始的展望符
-	firstSet[lookahead] = true
-	//}
+	if allNullable {
+		firstSet[lookahead] = true
+	}
 
 	return firstSet
 }

@@ -25,7 +25,7 @@ func main() {
 
 	// 构建状态集合并输出
 	parser.BuildStateCollection()
-	parser.PrintStateCollection()
+	// parser.PrintStateCollection()
 
 	// 构建分析表
 	parser.BuildTables()
